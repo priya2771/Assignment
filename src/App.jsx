@@ -27,13 +27,14 @@ import useLocalStorage from "use-local-storage";
 const siteProps = {
   name: "Priyanka Manjarekar",
   title: "Front-End WebDeveloper",
-  email: "alex@example.com",
-  gitHub: "microsoft",
-  instagram: "microsoft",
-  linkedIn: "satyanadella",
+  email: "priyankamanjarekar2001@gmail.com",
+  gitHub: "https://github.com/priya2771",
+  instagram: "",
+  linkedIn:
+    "https://www.linkedin.com/in/priyanka-manjarekar-08442522a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  twitter: "",
+  youTube: "",
 };
 
 const primaryColor = "#4E567E";

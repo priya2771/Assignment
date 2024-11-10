@@ -76,13 +76,33 @@ h1 {
   font-weight: 500;
   line-height: 0.8;
   margin: 0;
-  animation: slide 1s;
-  animation-timeline: scroll();
 }
-@keyframes slide {
-  to {
-    translate: 0 -5vmin;
-    text-indent: var(--d);
+h1::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h1:hover::before {
+  transform: scaleX(2);
+  transform-origin: bottom left;
+}
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: hsl(200 100% 80%);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
   }
 }
 
@@ -118,7 +138,7 @@ h3 {
   font-size: 1.25rem;
   margin: 0;
 }
-#about {
+#home {
   position: sticky;
   top: 0;
   z-index: -1;
@@ -198,10 +218,23 @@ img.socialIcon {
 .box {
   background-color: var(--foreground-color);
   transition: all 0.2s ease-in-out;
+  animation: appear linear;
+  animation-timeline: port();
+  animation-range: entry cover;
 }
 .box:hover {
   background-color: var(--hover);
   translate: 0px -10px;
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX((0px));
+  }
 }
 .pimg {
   height: 450px;
