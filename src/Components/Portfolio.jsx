@@ -31,28 +31,27 @@ const imageAltText = "desktop with books and laptop";
  */
 const projectList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
-    description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+    title: " Portfolio Website",
+    description: " Simple portfolio website using HTML, CSS and JS. It is self intro website.",
+    url: "https://priya2771.github.io/my_portfolio/",
   },
   {
-    title: "Web Development for Beginners",
+    title: "Login Page",
     description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+      " Log in into website using email id , a web page that allows users to register for a product or service by providing their information",
+    url: "https://priya2771.github.io/Login_page/",
   },
   {
-    title: "My Resume Site",
+    title: "Image-galley Website",
     description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+      " This simple and elegant photo gallery is built using React JS, HTML, CSS, and JavaScript, showcasing carousel of images in many ways.",
+    url: "https://priya2771.github.io/my_photo/",
   },
   {
-    title: "GitHub Codespaces and github.dev",
+    title: "Website Developement",
     description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+      "It is sample website for website developement company. Using Tailwind CSS for styling",
+    url: "",
   },
 ];
 
@@ -60,11 +59,11 @@ const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
       <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
+      <div className="port">
+        <div style={{ alignSelf: "center" }}>
           <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
+            src="https://images.unsplash.com/photo-1689023539491-221a5c9e6c71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            className="pimg"
             alt={imageAltText}
           />
         </div>
