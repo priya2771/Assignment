@@ -12,6 +12,30 @@ body {
   overflow-x: hidden;
   padding: 0;
   width: 100%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background-color: #f7f4f4;
+  --foreground-color: #6957b1;
+  --primary-text-color: #0c0c0c;
+  --secondory-text-color: #f7f4f4;
+  --toggle-bg: #f6e178;
+  --toggle-fg: #a99003;
+  --header: rgba(238, 165, 165, 0.89);
+  --hover: #0d4f6d;
+  --footer: #4e567e;
+}
+[data-theme="dark"] {
+  --background-color: #040404;
+  --foreground-color: #d8d7da;
+  --primary-text-color: #fcfafa;
+  --secondory-text-color: #0c0c0c;
+  --toggle-bg: #8065f6;
+  --toggle-fg: #030366;
+  --header: rgba(115, 13, 13, 0.89);
+  --hover: #a3dcee;
+  --footer: #7e4e7a;
 }
 
 div#main {
@@ -52,6 +76,14 @@ h1 {
   font-weight: 500;
   line-height: 0.8;
   margin: 0;
+  animation: slide 1s;
+  animation-timeline: scroll();
+}
+@keyframes slide {
+  to {
+    translate: 0 -5vmin;
+    text-indent: var(--d);
+  }
 }
 
 h2 {
@@ -61,15 +93,35 @@ h2 {
   padding-top: 0.6rem;
 }
 #portfolio h2,
-#about h2 {
+#about h2,
+ul {
   font-size: 4rem;
   font-weight: 400;
+  color: var(--primary-text-color);
 }
-
+.about {
+  background-color: var(--background-color);
+}
+#portfolio {
+  background-color: var(--background-color);
+}
+.container .box h3,
+p {
+  color: var(--secondory-text-color);
+  font-weight: 100px;
+}
+#about p {
+  color: var(--primary-text-color);
+}
 h3 {
   font-weight: 400;
   font-size: 1.25rem;
   margin: 0;
+}
+#about {
+  position: sticky;
+  top: 0;
+  z-index: -1;
 }
 
 p {
@@ -98,20 +150,27 @@ li {
 li::marker {
   color: #4e567e;
 }
+#footer {
+  background-color: var(--footer);
+}
 
 a {
-  color: black;
+  color: var(--primary-text-color);
   text-decoration: none;
   padding: 8px;
 }
+#header {
+  background-color: var(--header);
+}
 
-#header a:hover {
-  color: #0d4f6d;
+#header a:hover,
+.active {
+  color: var(--hover);
   font-weight: bolder;
 
   /* text-decoration: underline;
   text-underline-offset: 0.7rem; */
-  background-color: rgba(248, 250, 249, 0.848);
+  background-color: var(--background-color);
   padding: 8px;
   border-radius: 15px 0px;
 }
@@ -137,11 +196,11 @@ img.socialIcon {
   width: 30px;
 }
 .box {
-  background-color: #e2e2e2;
+  background-color: var(--foreground-color);
   transition: all 0.2s ease-in-out;
 }
 .box:hover {
-  background-color: #a0d4ed;
+  background-color: var(--hover);
   translate: 0px -10px;
 }
 .pimg {

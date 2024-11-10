@@ -11,9 +11,10 @@ import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
-
+import Toggle from "./Components/toggle";
 import "./styles.css";
-
+// import { useState } from "react";
+import useLocalStorage from "use-local-storage";
 /**
  * This object represents your information. The project is set so that you
  * only need to update these here, and values are passed a properties to the
@@ -25,7 +26,7 @@ import "./styles.css";
  */
 const siteProps = {
   name: "Priyanka Manjarekar",
-  title: "Front-End WEb Developer",
+  title: "Front-End WebDeveloper",
   email: "alex@example.com",
   gitHub: "microsoft",
   instagram: "microsoft",
@@ -39,9 +40,13 @@ const primaryColor = "#4E567E";
 const secondaryColor = "#D2F1E4";
 
 const App = () => {
+  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDark, setIsDark] = useLocalStorage("isDark", preference);
+
   return (
-    <div id="main">
+    <div id="main" data-theme={isDark ? "dark" : "light"}>
       <Header />
+      <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
       <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Portfolio />

@@ -52,8 +52,8 @@ const About = () => {
     <section className="padding" id="about">
       <video className="background" src={Video} autoPlay loop muted></video>
       <div
+        className="about"
         style={{
-          backgroundColor: "white",
           width: "50%",
           padding: "4rem",
           margin: "3rem auto",

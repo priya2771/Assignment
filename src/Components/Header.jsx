@@ -15,14 +15,16 @@ const Header = () => {
         display: "flex",
         justifyContent: "center",
         gap: "2rem",
-        background: "rgba(238, 165, 165, 0.89)",
+
         padding: "1rem",
         top: 0,
         width: "100%",
         zIndex: 10,
       }}
     >
-      <a href="#home">Home</a>
+      <a className="active" href="#home">
+        Home
+      </a>
       <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#footer">Contact</a>
