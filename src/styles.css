@@ -19,7 +19,7 @@ body {
   --background-color: #f7f4f4;
   --foreground-color: #6957b1;
   --primary-text-color: #0c0c0c;
-  --secondory-text-color: #f7f4f4;
+  --secondary-text-color: #f7f4f4;
   --toggle-bg: #f6e178;
   --toggle-fg: #a99003;
   --header: rgba(238, 165, 165, 0.89);
@@ -30,7 +30,7 @@ body {
   --background-color: #040404;
   --foreground-color: #d8d7da;
   --primary-text-color: #fcfafa;
-  --secondory-text-color: #0c0c0c;
+  --secondary-text-color: #0c0c0c;
   --toggle-bg: #8065f6;
   --toggle-fg: #030366;
   --header: rgba(115, 13, 13, 0.89);
@@ -130,6 +130,12 @@ p {
   color: var(--secondory-text-color);
   font-weight: 100px;
 }
+.container .box h3,
+p {
+  color: var(--secondary-text-color);
+  font-weight: 100;
+}
+
 #about p {
   color: var(--primary-text-color);
 }
@@ -257,7 +263,7 @@ ul {
   gap: 3rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
   h1 {
     font-size: 4rem;
   }
@@ -280,12 +286,13 @@ ul {
     width: 50%;
     font-size: 1rem;
   }
-  p {
-    font-size: 14px;
-  }
   .port {
     display: block;
   }
+  p {
+    font-size: 14px;
+  }
+
   .pimg {
     max-width: 100%;
     height: auto;
@@ -293,7 +300,7 @@ ul {
   .container {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 430px;
+    grid-template-columns: 330px;
     padding-top: 10px;
   }
 }
